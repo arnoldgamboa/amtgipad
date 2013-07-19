@@ -1,0 +1,128 @@
+<html>
+<head>
+    <title>AMTG</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.3.0.min.css">
+    <link rel="stylesheet" type="text/css" href="css/themes/amtg/amtg-theme.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    <script type="text/javascript" src="js/json_request.js"></script>
+    <script>
+        $( document ).on( "pageinit", "#menu-funds", function() {
+
+            $( document ).on( "swipeleft swiperight", "#menu-funds", function( e ) {
+                // We check if there is no open panel on the page because otherwise
+                // a swipe to close the left panel would also open the right panel (and v.v.).
+                // We do this by checking the data that the framework stores on the page element (panel: open).
+                if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+                    if ( e.type === "swipeleft"  ) {
+                        $( "div#funds-right-panel" ).panel( "open" );
+                    } else if ( e.type === "swiperight" ) {
+                        $( "div#funds-left-panel" ).panel( "open" );
+                    }
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    </head>
+     <body>
+        <!-- Home -->
+        <div data-role="page" class="jqm-demos ui-responsive-panel" id="menu-funds" data-url="menu-funds">
+            <div data-theme="c" data-role="header"  data-position="fixed" class="amtg-header">
+                <div class="amtg-logo">
+                    <img src="images/logo.png">
+                   <!-- TEST -->
+
+                </div>
+                <div class="amtg-search"><input type="search" name="search-1" id="search-1" value=""></div>
+                <div style="clear:both"></div>
+               
+               <!--  <a href="#">TEST</a>-->
+                <!-- <a href="#left-panel" data-icon="bars" data-iconpos="notext">Menu</a> -->
+            
+                <div data-theme="f" data-role="header">
+                    <div data-role="navbar" class="nav-glyphish-example" >
+                    <ul id="main-menu">
+                        <li><a href="index.html" id="morning" data-icon="custom" data-iconpos="top" data-transition="none" data-inline="true">Morning View</a></li>
+                        <li><a href="daily.html" id="daily-recap" data-icon="custom" data-iconpos="top" data-transition="none" data-inline="true">Daily Recap</a></li>
+                        <li><a href="research.html" id="research" data-icon="custom" data-iconpos="top" data-transition="none" data-inline="true">Research</a></li>
+                        <li><a href="funds.html" id="funds" data-icon="custom" data-iconpos="top" data-transition="none" data-inline="true" class="ui-btn-active">Funds</a></li>
+                        <li><a href="tools.html" id="tools" data-icon="custom" data-iconpos="top" data-transition="none" data-inline="true">Tools</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+                </div>
+            </div>
+            <div data-role="content" class="bg">
+
+                <div class="main-content">
+                    <div class="header">
+                        <strong>Funds</strong> (<span id="date_updated">as of Sept. 1, 2012</span>)
+                    </div>
+                    <h1 id="article-category"></h1>
+                    <hr>
+                    <div data-iscroll="" id="article-main" data-role="content">
+                        <div class="iscroll-pulldown">
+                          <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label"></span>
+                        </div>
+
+                        <div id="is-body"></div>
+                        
+                        <h2 id="article-title"><!-- Former stockbroker convicted for violations of securities law --></h2>
+                        <div id="article-body"></div>
+
+                        
+                        <div class="iscroll-pullup">
+                          <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label"></span>
+                        </div>
+                    </div>
+               
+                
+            </div>
+            <!-- <div data-theme="a" data-role="footer" data-position="fixed">
+                <h3>
+                    Footer
+                </h3>
+            </div> -->
+            <div data-role="panel" data-display="reveal" data-position-fixed="true" data-theme="b" id="funds-left-panel">
+                <h3>Funds</h3>
+                <ul data-role="listview" data-theme="c " class="nav-search" id="left-menu">
+                    <!-- <li><a href="local.html">Local News</a></li>
+                    <li><a href="#panel-fixed-page2">Asia Pacific</a></li>
+                    <li><a href="#panel-fixed-page2">US and Europe</a></li>
+                    <li><a href="#panel-fixed-page2">Key Indicators</a></li>
+                    <li><a href="#panel-fixed-page2">Asian Equity Markets</a></li>
+                    <li><a href="#panel-fixed-page2">Local Bond Market</a></li>
+                    <li><a href="#panel-fixed-page2">Upcoming Ecoonomic Releases</a></li> -->
+                </ul>
+            </div>
+        <div data-role="panel" data-display="overlay"  data-position="right" data-position-fixed="true" data-theme="a" id="funds-right-panel">
+            <form>
+                <h3>Fund Search</h3>
+                <br/>
+                <div style="padding-left: 20px;">
+                    <label for="fund-brand" class="select">Fund Brand: </label>
+                    <select name="fund-brand" id="funds-fund-brand" data-mini="true" data-inline="true"></select>
+                    <label for="risk-profile" class="select">Risk Profile: </label>
+                    <select name="risk-profile" id="funds-risk-profile" data-mini="true" data-inline="true"></select>
+                    <label for="fund-type" class="select">Fund Type: </label>
+                    <select name="fund-type" id="funds-fund-type" data-mini="true" data-inline="true"></select>
+                    <label for="currency" class="select">Currency: </label>
+                    <select name="currency" id="funds-currency" data-mini="true" data-inline="true"></select>
+                    <br />
+                    <span style="float: right;"><a href="favorties.html" id="morning-view-find-funds" class="find_funds" data-role="button" data-inline="true" data-theme="d" data-mini="true" data-transition="none">Favorites</a></span>
+                    <span style="float: right;"><a href="result.html" id="funds-find-funds" class="find_funds" data-role="button" data-inline="true" data-theme="b" data-mini="true" data-transition="none">Find Funds</a></span>
+                </div>
+
+                <br style="clear:both;" />
+                <br style="clear:both;" />
+                <ul data-role="listview" data-theme="a" class="nav-search" id="right-menu"></ul>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+Date,Fund ID,Fund Name,NAVPU,DoD2,YTD3,1 YR,3 YRS,5 YRS,Fund Brand,Risk Profile,Fund Type,Currency
+1/1/2013,1,BPI Short Term Fund  ,134.82,0.01%,0.09%,2.81%,8.92%,16.32%,BPI Investment Funds,Moderately Conservative ,Money Market,Philippine Peso
+1/1/2013,2,BPI Premium Bond Fund  ,165.9,-0.06%,0.19%,5.28%,18.75%,28.23%,BPI Investment Funds,Moderately Conservative ,Bond Fund,Philippine Peso
+1/1/2013,3,BPI Institutional Fund  ,208.25,-0.15%,0.46%,13.35%,35.58%,49.63%,BPI Investment Funds,,,
+1/1/2013,4,BPI International Fund Plus  ,156.75,0.03%,0.19%,5.30%,11.45%,16.53%,BPI Investment Funds,Moderately Conservative ,Bond Fund,US Dollar
+1/1/2013,5,BPI Global Philippine Fund  ,275.38,-0.46%,0.27%,9.98%,20.20%,34.50%,BPI Investment Funds,Moderately Conservative ,Bond Fund,US Dollar
+1/1/2013,6,BPI Balanced Fund  ,148.47,0.14%,2.50%,17.18%,61.75%,49.58%,BPI Investment Funds,Aggressive,Balanced Fund,Philippine Peso
+1/1/2013,7,BPI Equity Value Fund  ,131.16,0.15%,3.19%,20.29%,75.94%,44.21%,BPI Investment Funds,Aggressive,Equity Fund,Philippine Peso
+1/1/2013,8,BPI Global Equity Fund,222.06,-0.12%,2.19%,11.60%,3.99%,-15.79%,BPI Investment Funds,Aggressive,Equity Fund,US Dollar
+1/1/2013,9,ALFM Money Market Fund  ,109.75,0.00%,0.12%,3.08%,10.06%,-,ALFM Funds,Conservative,Money Market,Philippine Peso
+1/1/2013,10,ALFM Peso Bond Fund  ,300.61,0.03%,0.27%,6.07%,23.46%,34.75%,ALFM Funds,Moderately Conservative,Bond Fund,Philippine Peso
+1/1/2013,11,ALFM Dollar Bond Fund  ,398.71,-0.32%,0.15%,9.82%,21.76%,30.35%,ALFM Funds,Moderately Aggressive,Bond Fund,US Dollar
+1/1/2013,12,ALFM Euro Bond Fund  ,195.06,0.05%,-0.04%,8.81%,14.20%,21.83%,ALFM Funds,Moderately Conservative,Bond Fund,Euro
+1/1/2013,13,ALFM Growth Fund  ,229.02,0.57%,3.45%,20.04%,88.12%,117.69%,ALFM Funds,Aggressive,Balanced Fund,Philippine Peso
+1/1/2013,14,Ekklesia Fund ,1.8561,-0.03%,0.32%,7.00%,-,-,BIMI Managed Funds,Moderately Conservative,Bond Fund,Philippine Peso
+1/1/2013,15,Bahay Pari Solidaritas Fund ,1.835,0.16%,2.15%,25.31%,-,-,BIMI Managed Funds,Aggressive,Balanced Fund,Philippine Peso
+1/1/2013,16,ABF Philippines Bond Index Fund,187.97,-0.03%,0.48%,8.05%,26.72%,36.23%,BPI Index Funds,Moderately Aggressive,Bond Fund,Philippine Peso
+1/1/2013,17,Philippine Stock Index Fund,672.62,0.70%,4.79%,35.81%,100.27%,80.40%,BPI Index Funds,Aggressive,Equity Fund,Philippine Peso
+1/1/2013,18,Philippine Dollar Bond Index Fund  ,179.89,-0.12%,-0.11%,14.78%,44.41%,68.69%,BPI Index Funds,Aggressive,Bond Fund,US Dollar
+1/1/2013,19,Odyssey Peso Cash Mgt. Fund,14.16,-0.07%,0.07%,2.39%,9.52%,18.37%,Odyssey Funds ,Moderately Aggressive,Money Market,Philippine Peso
+1/1/2013,20,Odyssey Peso Income Fund,115.4,0.03%,0.38%,5.16%,20.50%,33.36%,Odyssey Funds ,Moderately Aggressive,Bond Fund,Philippine Peso
+1/1/2013,21,Odyssey Peso Bond Fund,243.11,0.07%,0.64%,9.56%,42.18%,52.83%,Odyssey Funds ,Aggressive,Bond Fund,Philippine Peso
+1/1/2013,22,Odyssey Phl. Dollar Bond Fund,24.77,-0.12%,-0.32%,14.15%,42.87%,56.51%,Odyssey Funds ,Aggressive,Bond Fund,US Dollar
+1/1/2013,23,Odyssey EM Bond Fund,10.26,0.00%,0.00%,6.21%,12.13%,14.45%,Odyssey Funds ,Aggressive,Bond Fund,US Dollar
+1/1/2013,24,Odyssey TE Peso FI Fund,252.7,-0.01%,0.78%,10.47%,45.12%,54.72%,Odyssey Funds ,,,
+1/1/2013,25,Odyssey TE Phl. Dollar FI Fund,23.3,-0.17%,-0.34%,14.83%,44.42%,56.39%,Odyssey Funds ,,,
+1/1/2013,26,Odyssey Diversified Cap. Fund,169.3,0.16%,1.97%,12.36%,61.49%,57.92%,Odyssey Funds ,Aggressive,Balanced Fund,Philippine Peso
+1/1/2013,27,Odyssey Diversified Bal. Fund,204.72,0.22%,3.39%,15.52%,75.02%,62.59%,Odyssey Funds ,Aggressive,Balanced Fund,Philippine Peso
+1/1/2013,28,Odyssey Phl. Equity Fund,509.47,0.26%,4.17%,15.79%,94.42%,65.82%,Odyssey Funds ,Aggressive,Equity Fund,Philippine Peso
+1/1/2013,29,Odyssey Phl. High Con. Eq. Fund,206.45,0.20%,4.06%,7.82%,126.68%,98.19%,Odyssey Funds ,Aggressive,Equity Fund,Philippine Peso
+1/1/2013,30,Odyssey AP High Div. Eq.  Fund,10.35,0.29%,1.87%,21.62%,12.24%,-,Odyssey Funds ,Aggressive,Equity Fund,US Dollar
+1/1/2013,31,Odyssey TE Phl. Equity Fund,414.31,0.26%,4.22%,17.27%,103.58%,77.20%,Odyssey Funds ,,,
