@@ -22,6 +22,7 @@
     <preference name="fullscreen" value="true" />
     <icon src="icons/amtg-ipad-icon.png" />
     <gap:splash src="icons/Default-Portrait~ipad.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="icons/Default-Portrait@2x~ipad.png" gap:platform="ios" width="768" height="1004" />
 
 
 </widget>
