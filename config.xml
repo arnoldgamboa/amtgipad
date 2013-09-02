@@ -17,7 +17,7 @@
         Hardeep Shoker 
     </author>
     <preference name="phonegap-version" value="2.9.0" />
-    <preference name="orientation" value="portrait" />
+    <!-- <preference name="orientation" value="portrait" /> -->
     <preference name="target-device" value="tablet" />
     <preference name="fullscreen" value="true" />
     <icon src="icons/amtg-ipad-icon.png" />
