@@ -32,7 +32,6 @@ $(document).bind('pageinit', function () {
 
 	        	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
 	        	$.each(data.risk_profile, function(key, value){
-	        		//$select_fund_brand.append($("<option></option>").attr("value", key).text(value));
 	        		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
 	        	});
 
@@ -107,7 +106,8 @@ $(document).bind('pageinit', function () {
         	});
 
         	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
-        	$.each(data.risk_profile, function(key, value){
+        	$.each(data.risk_profile, function(key, value){ /
+        		]
         		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
         	});
 
