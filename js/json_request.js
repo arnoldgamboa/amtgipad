@@ -32,6 +32,7 @@ $(document).bind('pageinit', function () {
 
 	        	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
 	        	$.each(data.risk_profile, function(key, value){
+	        		//$select_fund_brand.append($("<option></option>").attr("value", key).text(value));
 	        		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
 	        	});
 
@@ -106,8 +107,7 @@ $(document).bind('pageinit', function () {
         	});
 
         	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
-        	$.each(data.risk_profile, function(key, value){ /
-        		]
+        	$.each(data.risk_profile, function(key, value){
         		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
         	});
 
@@ -211,6 +211,7 @@ $(document).bind('pageinit', function () {
 		            localStorage["morning_view_categories"] = left_menu;
 
 		            //reset
+		            ctr = 0;
 		            $.each(data.articles, function(i, articles){
 		                if(ctr == 0)
 		                {
@@ -237,6 +238,7 @@ $(document).bind('pageinit', function () {
 		                    localStorage["morning_view_initial_title"] = articles.title;
 		                    localStorage["morning_view_initial_body"] = articles.body;
 		                }
+		                alert(articles.title);
 
 		                if (typeof localStorage["mvac_"+articles.category_id] == 'undefined')
 		                {
@@ -280,7 +282,7 @@ $(document).bind('pageinit', function () {
 		        	});
 		      	}
 		    });
-
+			
 			$("span#date_updated").html(localStorage["date_updated"]);
 			$("span#page-article-title").html("Morning View");
 
@@ -295,7 +297,7 @@ $(document).bind('pageinit', function () {
        		$('ul#left-menu').empty();
             $("ul#left-menu").append(localStorage["morning_view_categories"]);
             $('ul#left-menu').listview('refresh');
-
+            //alert(localStorage["morning_view_categories"]);
             $("div#is-body").html("");
 
             setTimeout(function(){
@@ -361,6 +363,7 @@ $(document).bind('pageinit', function () {
 	                localStorage["daily_recap_categories"] = left_menu;
 
 	                //reset
+	                ctr = 0;
 		            $.each(data.articles, function(i, articles){
 		                if(ctr == 0)
 		                {
@@ -520,6 +523,7 @@ $(document).bind('pageinit', function () {
 	                localStorage["research_categories"] = left_menu;
 
 	                //reset
+	                ctr = 0;
 		            $.each(data.articles, function(i, articles){
 		                if(ctr == 0)
 		                {
