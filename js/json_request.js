@@ -238,7 +238,6 @@ $(document).bind('pageinit', function () {
 		                    localStorage["morning_view_initial_title"] = articles.title;
 		                    localStorage["morning_view_initial_body"] = articles.body;
 		                }
-		                alert(articles.title);
 
 		                if (typeof localStorage["mvac_"+articles.category_id] == 'undefined')
 		                {
