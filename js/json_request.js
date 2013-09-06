@@ -217,6 +217,7 @@ $(document).bind('pageinit', function () {
 		                {
 		                    localStorage["morning_view_initial_title"] = articles.title;
 		                    localStorage["morning_view_initial_body"] = articles.body;
+		                    localStorage['category_id'] = articles.category_id;
 		                }
 
 		                if (typeof localStorage["mvac_"+articles.category_id] == 'undefined')
@@ -259,6 +260,7 @@ $(document).bind('pageinit', function () {
 		        success: function (data) {
 		        	console.log(data);
 		            localStorage["fund_brand"] = "";
+		            localStorage["fund_brand"] = "<option value='0'>Choose</option>";
 		            localStorage["morning_view_right_menu"] = "";
 		        	$.each(data.fund_brand, function(key, value){
 		        		localStorage["fund_brand"] += "<option value='"+key+"' selected='selected'>"+value+"</option>";
@@ -266,16 +268,19 @@ $(document).bind('pageinit', function () {
 		        	});
 
 		        	localStorage["risk_profile"] = "";
+		        	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
 		        	$.each(data.risk_profile, function(key, value){
 		        		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["fund_type"] = "";
+		        	localStorage["fund_type"] = "<option value='0'>Choose</option>";
 		        	$.each(data.fund_type, function(key, value){
 		        		localStorage["fund_type"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["currency"] = "";
+		        	localStorage["currency"] = "<option value='0'>Choose</option>";
 		        	$.each(data.currency, function(key, value){
 		        		localStorage["currency"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
@@ -368,6 +373,7 @@ $(document).bind('pageinit', function () {
 		                {
 		                    localStorage["daily_recap_initial_title"] = articles.title;
 		                    localStorage["daily_recap_initial_body"] = articles.body;
+		                    localStorage['category_id'] = articles.category_id;
 		                }
 
 		                if (typeof localStorage["drac_"+articles.category_id] == 'undefined')
@@ -409,6 +415,7 @@ $(document).bind('pageinit', function () {
 		        success: function (data) {
 		        	//console.log(data);
 		            localStorage["fund_brand"] = "";
+		            localStorage["fund_brand"] = "<option value='0'>Choose</option>";
 		            localStorage["daily_recap_right_menu"] = "";
 		        	$.each(data.fund_brand, function(key, value){
 		        		localStorage["fund_brand"] += "<option value='"+key+"' selected='selected'>"+value+"</option>";
@@ -416,16 +423,19 @@ $(document).bind('pageinit', function () {
 		        	});
 
 		        	localStorage["risk_profile"] = "";
+		        	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
 		        	$.each(data.risk_profile, function(key, value){
 		        		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["fund_type"] = "";
+		        	localStorage["fund_type"] = "<option value='0'>Choose</option>";
 		        	$.each(data.fund_type, function(key, value){
 		        		localStorage["fund_type"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["currency"] = "";
+		        	localStorage["currency"] = "<option value='0'>Choose</option>";
 		        	$.each(data.currency, function(key, value){
 		        		localStorage["currency"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
@@ -528,6 +538,7 @@ $(document).bind('pageinit', function () {
 		                {
 		                    localStorage["research_initial_title"] = articles.title;
 		                    localStorage["research_initial_body"] = articles.body;
+		                    localStorage['category_id'] = articles.category_id;
 		                }
 
 		                if (typeof localStorage["reac_"+articles.category_id] == 'undefined')
@@ -570,6 +581,7 @@ $(document).bind('pageinit', function () {
 		        success: function (data) {
 		        	console.log(data);
 		            localStorage["fund_brand"] = "";
+		            localStorage["fund_brand"] = "<option value='0'>Choose</option>";
 		            localStorage["research_right_menu"] = "";
 		        	$.each(data.fund_brand, function(key, value){
 		        		localStorage["fund_brand"] += "<option value='"+key+"' selected='selected'>"+value+"</option>";
@@ -577,16 +589,19 @@ $(document).bind('pageinit', function () {
 		        	});
 
 		        	localStorage["risk_profile"] = "";
+		        	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
 		        	$.each(data.risk_profile, function(key, value){
 		        		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["fund_type"] = "";
+		        	localStorage["fund_type"] = "<option value='0'>Choose</option>";
 		        	$.each(data.fund_type, function(key, value){
 		        		localStorage["fund_type"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["currency"] = "";
+		        	localStorage["currency"] = "<option value='0'>Choose</option>";
 		        	$.each(data.currency, function(key, value){
 		        		localStorage["currency"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
@@ -665,6 +680,7 @@ $(document).bind('pageinit', function () {
 
 		            localStorage["funds_initial_title"] = data.title;
 		            localStorage["funds_initial_body"] = data.body;
+		            //localStorage['category_id'] = articles.category_id;
 		        }
 		    });
 
@@ -675,6 +691,7 @@ $(document).bind('pageinit', function () {
 		        success: function (data) {
 		        	console.log(data);
 		            localStorage["fund_brand"] = "";
+		            localStorage["fund_brand"] = "<option value='0'>Choose</option>";
 		            localStorage["funds_right_menu"] = "";
 		        	$.each(data.fund_brand, function(key, value){
 		        		localStorage["fund_brand"] += "<option value='"+key+"' selected='selected'>"+value+"</option>";
@@ -682,16 +699,19 @@ $(document).bind('pageinit', function () {
 		        	});
 
 		        	localStorage["risk_profile"] = "";
+		        	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
 		        	$.each(data.risk_profile, function(key, value){
 		        		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["fund_type"] = "";
+		        	localStorage["fund_type"] = "<option value='0'>Choose</option>";
 		        	$.each(data.fund_type, function(key, value){
 		        		localStorage["fund_type"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["currency"] = "";
+		        	localStorage["currency"] = "<option value='0'>Choose</option>";
 		        	$.each(data.currency, function(key, value){
 		        		localStorage["currency"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
@@ -767,6 +787,7 @@ $(document).bind('pageinit', function () {
 
 		            localStorage["tools_initial_title"] = data.title;
 		            localStorage["tools_initial_body"] = data.body;
+		            //localStorage["tools_initial_article"] = articles.category_id;
 		        }
 		    });
 
@@ -777,6 +798,7 @@ $(document).bind('pageinit', function () {
 		        success: function (data) {
 		        	console.log(data);
 		            localStorage["fund_brand"] = "";
+		            localStorage["fund_brand"] = "<option value='0'>Choose</option>";
 		            localStorage["tools_right_menu"] = "";
 		        	$.each(data.fund_brand, function(key, value){
 		        		localStorage["fund_brand"] += "<option value='"+key+"' selected='selected'>"+value+"</option>";
@@ -784,16 +806,19 @@ $(document).bind('pageinit', function () {
 		        	});
 
 		        	localStorage["risk_profile"] = "";
+		        	localStorage["risk_profile"] = "<option value='0'>Choose</option>";
 		        	$.each(data.risk_profile, function(key, value){
 		        		localStorage["risk_profile"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["fund_type"] = "";
+		        	localStorage["fund_type"] = "<option value='0'>Choose</option>";
 		        	$.each(data.fund_type, function(key, value){
 		        		localStorage["fund_type"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
 
 		        	localStorage["currency"] = "";
+		        	localStorage["currency"] = "<option value='0'>Choose</option>";
 		        	$.each(data.currency, function(key, value){
 		        		localStorage["currency"] += "<option value='"+key+"'>"+value+"</option>";
 		        	});
@@ -1028,9 +1053,13 @@ $(document).bind('pageinit', function () {
 	  	  //$('div#is-body').html("");
 	      $('div#is-body').html(localStorage['reac_'+this_category_id]);
       	}else if(current_page == "funds"){
-          //$('div#is-body').html('');
+          $('div#is-body').html('');
+          $("h2#article-title").html(localStorage['funds_initial_title'] == '' ? '' : localStorage['funds_initial_title']);
+		  $("div#article-body").html(localStorage['funds_initial_body'] == '' ? '' : localStorage['funds_initial_body']);
       	}else if(current_page == "tools"){
-          //$('div#is-body').html('');
+          $('div#is-body').html('');
+          $("h2#article-title").html(localStorage['tools_initial_title']);
+		  $("div#article-body").html(localStorage['tools_initial_body']);
       	}
 
 		setTimeout(function(){
