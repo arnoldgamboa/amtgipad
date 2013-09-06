@@ -866,6 +866,8 @@ $(document).bind('pageinit', function () {
 		var rel_id = rel_array[0];
 		var rel_name = rel_array[1];
 
+		localStorage['category_id'] = id;
+
 		$.mobile.showPageLoadingMsg("a", "Loading...", true);
 
 		//alert(rel_id);
@@ -874,12 +876,17 @@ $(document).bind('pageinit', function () {
 			//remove the prev data
 			$("h2#article-title").html("");
 			$("div#article-body").html("");
+
+			//alert(localStorage['mvac_'+id]);
+
 			//set the new one
+			$("div#is-body").html("");
 			$("div#is-body").html(localStorage['mvac_'+id]);
 			$("h1#article-category").html(rel_name);
 
 			localStorage['mvac_is_id'] = 'mvac_'+id;
 
+			//alert(localStorage['left_menu_category_'+id]);
 			setTimeout(function(){
 		        $.mobile.loading('hide');
 		    }, 1000);
@@ -908,6 +915,7 @@ $(document).bind('pageinit', function () {
 			$("div#is-body").html(localStorage['reac_'+id]);
 			$("h1#article-category").html(rel_name);
 			$("div#daily-recap-left-panel").panel("close");
+
 			localStorage['reac_is_id'] = 'reac_'+id;
 
 			setTimeout(function(){
@@ -929,6 +937,106 @@ $(document).bind('pageinit', function () {
 		// 	jsonp : "callback",
 		// 	jsonpCallback: "get_article"
 		// });
+	});
+
+	//REFRESH
+	$('#refresh').on('click', function(event) {
+		var current_page = localStorage['current_page'];
+		var this_category_id = localStorage['category_id'];
+
+		$.mobile.showPageLoadingMsg("a", "Updating...", true);
+		$("div#left-panel").panel("close");
+
+		$("h2#article-title").html("");
+		$("div#article-body").html("");
+
+      	if(current_page == "morning_view")
+      	{
+
+      	  $.ajax({
+				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_morning_view',
+		        dataType: "jsonp",
+		        success: function (data) {
+		            console.log(data);
+		            localStorage["date_updated"] = data.date_updated;
+		            localStorage['mvac_'+this_category_id] = "";
+		            //get the articles
+		            ctr = 0;
+		            $.each(data.articles, function(i, articles){
+
+		            	if(articles.category_id == this_category_id)
+		            	{
+			                localStorage["mvac_"+articles.category_id] += '<h2 id="article-title">'+articles.title+'</h2>';
+			                localStorage["mvac_"+articles.category_id] += '<div id="article-body">'+articles.body+'</div>';
+		            	}
+		                ctr++;
+		            });
+		        }
+		    });
+
+      	  //$('div#is-body').html("");
+          $('div#is-body').html(localStorage['mvac_'+this_category_id]);
+
+      	}else if(current_page == "daily_recap"){
+
+      	  $.ajax({
+				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_daily_recap',
+		        dataType: "jsonp",
+		        success: function (data) {
+		            console.log(data);
+		            localStorage["date_updated"] = data.date_updated;
+		            localStorage['drac_'+this_category_id] = "";
+		            //get the articles
+		            ctr = 0;
+		            $.each(data.articles, function(i, articles){
+
+		            	if(articles.category_id == this_category_id)
+		            	{
+			                localStorage["drac_"+articles.category_id] += '<h2 id="article-title">'+articles.title+'</h2>';
+			                localStorage["drac_"+articles.category_id] += '<div id="article-body">'+articles.body+'</div>';
+		            	}
+		                ctr++;
+		            });
+		        }
+		    });
+	  	  
+	  	  //$('div#is-body').html("");
+	      $('div#is-body').html(localStorage['drac_'+this_category_id]);
+
+      	}else if(current_page == "research"){
+          $.ajax({
+				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_research',
+		        dataType: "jsonp",
+		        success: function (data) {
+		            console.log(data);
+		            localStorage["date_updated"] = data.date_updated;
+		            localStorage['reac_'+this_category_id] = "";
+		            //get the articles
+		            ctr = 0;
+		            $.each(data.articles, function(i, articles){
+
+		            	if(articles.category_id == this_category_id)
+		            	{
+			                localStorage["reac_"+articles.category_id] += '<h2 id="article-title">'+articles.title+'</h2>';
+			                localStorage["reac_"+articles.category_id] += '<div id="article-body">'+articles.body+'</div>';
+		            	}
+		                ctr++;
+		            });
+		        }
+		    });
+	  	  
+	  	  //$('div#is-body').html("");
+	      $('div#is-body').html(localStorage['reac_'+this_category_id]);
+      	}else if(current_page == "funds"){
+          //$('div#is-body').html('');
+      	}else if(current_page == "tools"){
+          //$('div#is-body').html('');
+      	}
+
+		setTimeout(function(){
+	        $.mobile.loading('hide');
+	    }, 1000);
+
 	});
 
 	//right menu
@@ -962,7 +1070,8 @@ $(document).bind('pageinit', function () {
 	        // }
 	        success: function (data) {
 	            //console.log(data);
-	            var table = "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
+	            var table = "";
+	            table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
 	            
 	            $.each(data, function(i, result){
 	            	
@@ -1113,7 +1222,8 @@ $(document).bind('pageinit', function () {
 	        dataType: "jsonp",
 	        success: function (data) {
 	            // console.log(data);
-	            var table = "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
+	            var table = "";
+	            table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
 
 	            $.each(data, function(i, result){
 
@@ -1219,7 +1329,8 @@ $(document).bind('pageinit', function () {
 	        dataType: "jsonp",
 	        success: function (data) {
 	            // console.log(data);
-	            var table = "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
+	            var table = "";
+	           	table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
 
 	            $.each(data, function(i, result){
 
