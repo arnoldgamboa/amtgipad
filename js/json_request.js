@@ -893,7 +893,7 @@ $(document).bind('pageinit', function () {
 
 		localStorage['category_id'] = id;
 
-		$.mobile.showPageLoadingMsg("a", "Loading...", true);
+		//$.mobile.showPageLoadingMsg("a", "Loading...", true);
 
 		//alert(rel_id);
 		if(rel_id == "morning_view")
@@ -912,9 +912,9 @@ $(document).bind('pageinit', function () {
 			localStorage['mvac_is_id'] = 'mvac_'+id;
 
 			//alert(localStorage['left_menu_category_'+id]);
-			setTimeout(function(){
-		        $.mobile.loading('hide');
-		    }, 1000);
+			// setTimeout(function(){
+		 //        $.mobile.loading('hide');
+		 //    }, 1000);
 
 		}else if(rel_id == "daily_recap")
 		{
@@ -927,9 +927,9 @@ $(document).bind('pageinit', function () {
 
 			localStorage['drac_is_id'] = 'drac_'+id;
 
-			setTimeout(function(){
-		        $.mobile.loading('hide');
-		    }, 1000);
+			// setTimeout(function(){
+		 //        $.mobile.loading('hide');
+		 //    }, 1000);
 
 		}else if(rel_id == "research")
 		{
@@ -943,9 +943,9 @@ $(document).bind('pageinit', function () {
 
 			localStorage['reac_is_id'] = 'reac_'+id;
 
-			setTimeout(function(){
-		        $.mobile.loading('hide');
-		    }, 1000);
+			// setTimeout(function(){
+		 //        $.mobile.loading('hide');
+		 //    }, 1000);
 
 		}else if(rel_id == "funds")
 		{
