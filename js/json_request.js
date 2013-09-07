@@ -1134,6 +1134,7 @@ $(document).bind('pageinit', function () {
                 table += "<script>$('.star').click(function(event) {var star_id = $(this).attr('id'); if($(this).hasClass('star_off')){localStorage['star_ids'] += ','+star_id;$('#'+star_id).attr('src', 'images/star-on-big.png');$(this).removeClass('star_off');$(this).addClass('star_on');}else{var new_star_ids; var star_ids_array=localStorage['star_ids'].split(',');$.each(star_ids_array,function(key,value){if(star_id != value){new_star_ids+= ','+value;}});localStorage['star_ids']=new_star_ids;$('#'+star_id).attr('src', 'images/star-off-big.png');$(this).removeClass('star_on');$(this).addClass('star_off');}});</script>";
 	            table += "</tbody>";
 
+	            $("div#is-body").html("");
 	            $("h1#article-category").html("");
 				$("h2#article-title").html("");
 				$("div#article-body").html("");
@@ -1287,6 +1288,7 @@ $(document).bind('pageinit', function () {
 	           
 	          	table += "</tbody>";
 
+	          	$("div#is-body").html("");
 	            $("h1#article-category").html("");
 				$("h2#article-title").html("");
 				$("div#article-body").html("");
@@ -1351,15 +1353,15 @@ $(document).bind('pageinit', function () {
 		localStorage['star_ids'] = star_ids;
 
 		$.mobile.showPageLoadingMsg("a", "Loading...", true);
-
+		//alert(star_ids);
 		//get the result
 		$.ajax({
 			url: 'http://project.teamsparrow.net/amtgipad/app/api/favorites/?ids='+star_ids,
 	        dataType: "jsonp",
 	        success: function (data) {
-	            // console.log(data);
-	            var table = "";
-	           	table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
+	            //console.log(data);
+	            var fav_table = "";
+	           	fav_table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
 
 	            $.each(data, function(i, result){
 
@@ -1385,23 +1387,26 @@ $(document).bind('pageinit', function () {
 				    // 	star_class = "star_off";
 				    // }
 
+				    star_class = "star_on";
+
 				    star_src = 'images/star-on-big.png';
 
                     //table += "<tr><td><span><img class='star star_on' id="+result.id+" src="+star_src+" /></span></td><td><a  href='#fund_1' data-transition='pop' data-inline='true' data-rel='popup'>"+result.fund_name+"</a></td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
-                	table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href=\"#funddesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.fund_name+"</a><div data-role=\"popup\" id=\"funddesc"+result.id+"\"><p>"+result.description+"</p></div></td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
-                	table += "<script>$(\"#funddesc"+result.id+"\").popup();</script>";
+                	fav_table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href=\"#funddesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.fund_name+"</a><div data-role=\"popup\" id=\"funddesc"+result.id+"\"><p>"+result.description+"</p></div></td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
+                	fav_table += "<script>$(\"#funddesc"+result.id+"\").popup();</script>";
                 });
                 //table += "<script>$('.star').raty({numberMax: 1,starOff : 'images/star-off-big.png',starOn : 'images/star-on-big.png'});</script>";
-                table += "<script>$('.star').click(function(event) {var star_id = $(this).attr('id'); if($(this).hasClass('star_off')){localStorage['star_ids'] += ','+star_id;$('#'+star_id).attr('src', 'images/star-on-big.png');$(this).removeClass('star_off');$(this).addClass('star_on');}else{var new_star_ids; var star_ids_array=localStorage['star_ids'].split(',');$.each(star_ids_array,function(key,value){if(star_id != value){new_star_ids+= ','+value;}});localStorage['star_ids']=new_star_ids;$('#'+star_id).attr('src', 'images/star-off-big.png');$(this).removeClass('star_on');$(this).addClass('star_off');}});</script>";
+                fav_table += "<script>$('.star').click(function(event) {var star_id = $(this).attr('id'); if($(this).hasClass('star_off')){localStorage['star_ids'] += ','+star_id;$('#'+star_id).attr('src', 'images/star-on-big.png');$(this).removeClass('star_off');$(this).addClass('star_on');}else{var new_star_ids; var star_ids_array=localStorage['star_ids'].split(',');$.each(star_ids_array,function(key,value){if(star_id != value){new_star_ids+= ','+value;}});localStorage['star_ids']=new_star_ids;$('#'+star_id).attr('src', 'images/star-off-big.png');$(this).removeClass('star_on');$(this).addClass('star_off');}});</script>";
 	           
-	          	table += "</tbody>";
+	          	fav_table += "</tbody>";
 
+	          	$("div#is-body").html("");
 	            $("h1#article-category").html("");
 				$("h2#article-title").html("");
 				$("div#article-body").html("");
 
 	            $("span#page-article-title").html("Search Results");
-	            $("div#article-body").html(table);
+	            $("div#article-body").html(fav_table);
 	            $("div#right-panel").panel("close");
 
 	            setTimeout(function(){
