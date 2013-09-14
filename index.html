@@ -243,9 +243,12 @@
                 </ul>
             </div>
         <div data-role="panel" data-display="overlay"  data-position="right" data-position-fixed="true" data-theme="a" id="right-panel">
+            <!-- Activate search here -->
+            <!--  <form id="search-form">
                     <h3>Site Search</h3>
                     <input type="search" name="search-1" id="search-1" value="">
-            <form>
+            </form>
+ -->            <form>
                 <h3>Fund Search</h3>
                 <br/>
                 <div style="padding-left: 20px;">
@@ -266,8 +269,29 @@
                 <br style="clear:both;" />
                 <ul data-role="listview" data-theme="a" class="nav-search" id="right-menu"></ul>
             </form>
-        </div>
-        </div>
+           
 
+        </div>
+        </div>
+    <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+
+            $(document).on('click', ".external", function (e) {
+                e.preventDefault();
+                var targetURL = $(this).attr("href");
+
+                window.open(targetURL, "_system");
+
+
+            });
+
+            $(function(){
+                $("#search-form").submit(function(){
+                    return false; 
+                    //search here.
+                });
+            });
+        </script>
     </body>
 </html>
