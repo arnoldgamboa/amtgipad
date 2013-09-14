@@ -173,6 +173,8 @@ $(document).bind('pageinit', function () {
 	// $('select#result-fund-type').html(localStorage["fund_type"]);
 	// $('select#result-currency').html(localStorage["currency"]);
 
+	$("span#date_updated").html(localStorage["date_updated"]);
+
 	$('select').selectmenu('refresh', true);
 
 	// $('#refresh').on('click',  function(event) {
