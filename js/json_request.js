@@ -1204,6 +1204,48 @@ $(document).bind('pageinit', function () {
 
 	});
 
+	//site search
+	$('#site-search').on('click', function(event) {
+
+		var search_keyword = $('#search_keyword').val();
+
+		$.mobile.showPageLoadingMsg("a", "Loading...", true);
+
+		//get the result
+		$.ajax({
+			url: 'http://project.teamsparrow.net/amtgipad/app/api/search_article/'+search_keyword,
+	        dataType: "jsonp",
+	        success: function (data) {
+	            // console.log(data);
+	            var table = "";
+	            table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th width=\"100%\">&nbsp;</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
+
+	            $.each(data, function(i, result){
+
+                    //table += "<tr><td><div class='star' id="+result.id+"></div></td><td>"+result.fund_name+"</td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
+                    table += "<tr><td width=\"100%\"><a href=\"#searchdesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.title+"</a><div data-role=\"popup\" id=\"searchdesc"+result.id+"\" style=\"width:70%;right:10%;left:10%;\"><a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"c\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close</a><p>"+result.body+"</p></div></td></tr>";
+                	table += "<script>$(\"#searchdesc"+result.id+"\").popup();</script>";
+                });
+
+	          	table += "</tbody>";
+
+	          	$("div#is-body").html("");
+	            $("h1#article-category").html("");
+				$("h2#article-title").html("");
+				$("div#article-body").html("");
+
+	            $("span#page-article-title").html("Search Results");
+	            $("div#article-body").html(table);
+	            $("div#right-panel").panel("close");
+
+	            setTimeout(function(){
+			        $.mobile.loading('hide');
+			    }, 1000);
+	        }
+	    });
+
+	});
+
 	//funds search
 	$('.find_funds').on('click', function(event) {
 		var id = $(this).attr("id");
