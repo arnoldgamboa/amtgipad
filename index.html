@@ -244,11 +244,13 @@
             </div>
         <div data-role="panel" data-display="overlay"  data-position="right" data-position-fixed="true" data-theme="a" id="right-panel">
             <!-- Activate search here -->
-            <!--  <form id="search-form">
+             <!-- <form id="search-form"> -->
                     <h3>Site Search</h3>
-                    <input type="search" name="search-1" id="search-1" value="">
-            </form>
- -->            <form>
+                    <input type="search" name="search_keyword" id="search_keyword" value="">
+                    <span style="float: right;"><a href="#" id="site-search" data-role="button" data-inline="true" data-theme="b" data-mini="true" data-transition="none">Search</a></span> 
+                    <br />
+            <!-- </form> -->
+            <form>
                 <h3>Fund Search</h3>
                 <br/>
                 <div style="padding-left: 20px;">
@@ -286,12 +288,12 @@
 
             });
 
-            $(function(){
-                $("#search-form").submit(function(){
-                    return false; 
-                    //search here.
-                });
-            });
+            // $(function(){
+            //     $("#search-form").submit(function(){
+            //         return false; 
+            //         //search here.
+            //     });
+            // });
         </script>
     </body>
 </html>
