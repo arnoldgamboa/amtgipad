@@ -673,6 +673,19 @@ $(document).bind('pageinit', function () {
 		}else if(main_menu_id == "funds"){
 			localStorage["current_page"] = "funds";
 
+			// $.ajax({
+			// 	url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds',
+		 //        dataType: "jsonp",
+		 //        success: function (data) {
+		 //            console.log(data);
+		 //            localStorage["date_updated"] = data.date_updated;
+
+		 //            localStorage["funds_initial_title"] = data.title;
+		 //            localStorage["funds_initial_body"] = data.body;
+		 //            //localStorage['category_id'] = articles.category_id;
+		 //        }
+		 //    });
+
 			$.ajax({
 				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds',
 		        dataType: "jsonp",
@@ -680,9 +693,53 @@ $(document).bind('pageinit', function () {
 		            console.log(data);
 		            localStorage["date_updated"] = data.date_updated;
 
-		            localStorage["funds_initial_title"] = data.title;
-		            localStorage["funds_initial_body"] = data.body;
-		            //localStorage['category_id'] = articles.category_id;
+		            var left_menu = "";
+	                $.each(data.categories, function(i, categories){
+	                    //alert('Categories ==  '+categories.title);
+	                    left_menu += '<li><a href="javascript:void(0)" rel="funds|'+categories.title+'" id="'+categories.id+'">'+categories.title+'</a></li>';
+	                });
+	                localStorage["funds_categories"] = left_menu;
+
+	                //reset
+	                ctr = 0;
+		            $.each(data.articles, function(i, articles){
+		                if(ctr == 0)
+		                {
+		                    localStorage["funds_initial_title"] = articles.title;
+		                    localStorage["funds_initial_body"] = articles.body;
+		                    localStorage['category_id'] = articles.category_id;
+		                }
+
+		                if (typeof localStorage["fuac_"+articles.category_id] == 'undefined')
+		                {
+		                    localStorage["fuac_"+articles.category_id] = "";
+		                }
+
+		                localStorage["fuac_"+articles.category_id] = '';
+		                localStorage["fuac_"+articles.category_id] = '';
+
+		                ctr++;
+		            });
+
+	                ctr = 0;
+	                $.each(data.articles, function(i, articles){
+	                    //alert('Articles ==  '+articles.title);
+	                    if(ctr == 0)
+	                    {
+	                        localStorage["funds_initial_title"] = articles.title;
+	                        localStorage["funds_initial_body"] = articles.body;
+	                    }
+
+	                    if (typeof localStorage["fuac_"+articles.category_id] == 'undefined')
+	                    {
+	                        localStorage["fuac_"+articles.category_id] = "";
+	                    }
+
+	                    localStorage["fuac_"+articles.category_id] += '<h2 id="article-title">'+articles.title+'</h2>';
+	                    localStorage["fuac_"+articles.category_id] += '<div id="article-body">'+articles.body+'</div>';
+
+	                    ctr++;
+	                });
 		        }
 		    });
 
@@ -732,7 +789,7 @@ $(document).bind('pageinit', function () {
 
        		$("h3#left-menu-title").html("Funds");
        		$('ul#left-menu').empty();
-            //$("ul#left-menu").append(localStorage["funds_categories"]);
+            $("ul#left-menu").append(localStorage["funds_categories"]);
             $('ul#left-menu').listview('refresh');
 
             $("div#is-body").html("");
@@ -780,6 +837,19 @@ $(document).bind('pageinit', function () {
 		}else if(main_menu_id == "tools"){
 			localStorage["current_page"] = "tools";
 
+			// $.ajax({
+			// 	url: 'http://project.teamsparrow.net/amtgipad/app/api/get_tools',
+		 //        dataType: "jsonp",
+		 //        success: function (data) {
+		 //            console.log(data);
+		 //            localStorage["date_updated"] = data.date_updated;
+
+		 //            localStorage["tools_initial_title"] = data.title;
+		 //            localStorage["tools_initial_body"] = data.body;
+		 //            //localStorage["tools_initial_article"] = articles.category_id;
+		 //        }
+		 //    });
+
 			$.ajax({
 				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_tools',
 		        dataType: "jsonp",
@@ -787,9 +857,53 @@ $(document).bind('pageinit', function () {
 		            console.log(data);
 		            localStorage["date_updated"] = data.date_updated;
 
-		            localStorage["tools_initial_title"] = data.title;
-		            localStorage["tools_initial_body"] = data.body;
-		            //localStorage["tools_initial_article"] = articles.category_id;
+		            var left_menu = "";
+	                $.each(data.categories, function(i, categories){
+	                    //alert('Categories ==  '+categories.title);
+	                    left_menu += '<li><a href="javascript:void(0)" rel="tools|'+categories.title+'" id="'+categories.id+'">'+categories.title+'</a></li>';
+	                });
+	                localStorage["tools_categories"] = left_menu;
+
+	                //reset
+	                ctr = 0;
+		            $.each(data.articles, function(i, articles){
+		                if(ctr == 0)
+		                {
+		                    localStorage["tools_initial_title"] = articles.title;
+		                    localStorage["tools_initial_body"] = articles.body;
+		                    localStorage['category_id'] = articles.category_id;
+		                }
+
+		                if (typeof localStorage["toac_"+articles.category_id] == 'undefined')
+		                {
+		                    localStorage["toac_"+articles.category_id] = "";
+		                }
+
+		                localStorage["toac_"+articles.category_id] = '';
+		                localStorage["toac_"+articles.category_id] = '';
+
+		                ctr++;
+		            });
+
+	                ctr = 0;
+	                $.each(data.articles, function(i, articles){
+	                    //alert('Articles ==  '+articles.title);
+	                    if(ctr == 0)
+	                    {
+	                        localStorage["tools_initial_title"] = articles.title;
+	                        localStorage["tools__initial_body"] = articles.body;
+	                    }
+
+	                    if (typeof localStorage["toac_"+articles.category_id] == 'undefined')
+	                    {
+	                        localStorage["toac_"+articles.category_id] = "";
+	                    }
+
+	                    localStorage["toac_"+articles.category_id] += '<h2 id="article-title">'+articles.title+'</h2>';
+	                    localStorage["toac_"+articles.category_id] += '<div id="article-body">'+articles.body+'</div>';
+
+	                    ctr++;
+	                });
 		        }
 		    });
 
@@ -839,7 +953,7 @@ $(document).bind('pageinit', function () {
 
        		$("h3#left-menu-title").html("Tools");
        		$('ul#left-menu').empty();
-            //$("ul#left-menu").append(localStorage["funds_categories"]);
+            $("ul#left-menu").append(localStorage["tools_categories"]);
             $('ul#left-menu').listview('refresh');
 
             $("div#is-body").html("");
@@ -951,10 +1065,26 @@ $(document).bind('pageinit', function () {
 
 		}else if(rel_id == "funds")
 		{
+			//remove the prev data
+			$("h2#article-title").html("");
+			$("div#article-body").html("");
+			//set the new one
+			$("div#is-body").html(localStorage['fuac_'+id]);
+			$("h1#article-category").html(rel_name);
+			$("div#daily-recap-left-panel").panel("close");
 
+			localStorage['fuac_is_id'] = 'fuac_'+id;
 		}else if(rel_id == "tools")
 		{
+			//remove the prev data
+			$("h2#article-title").html("");
+			$("div#article-body").html("");
+			//set the new one
+			$("div#is-body").html(localStorage['toac_'+id]);
+			$("h1#article-category").html(rel_name);
+			$("div#daily-recap-left-panel").panel("close");
 
+			localStorage['toac_is_id'] = 'toac_'+id;
 		}
 
 		$("div#left-panel").panel("close");
@@ -1055,13 +1185,59 @@ $(document).bind('pageinit', function () {
 	  	  //$('div#is-body').html("");
 	      $('div#is-body').html(localStorage['reac_'+this_category_id]);
       	}else if(current_page == "funds"){
-          $('div#is-body').html('');
-          $("h2#article-title").html(localStorage['funds_initial_title'] == '' ? '' : localStorage['funds_initial_title']);
-		  $("div#article-body").html(localStorage['funds_initial_body'] == '' ? '' : localStorage['funds_initial_body']);
+    //       $('div#is-body').html('');
+    //       $("h2#article-title").html(localStorage['funds_initial_title'] == '' ? '' : localStorage['funds_initial_title']);
+		  // $("div#article-body").html(localStorage['funds_initial_body'] == '' ? '' : localStorage['funds_initial_body']);
+		  $.ajax({
+				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds',
+		        dataType: "jsonp",
+		        success: function (data) {
+		            console.log(data);
+		            localStorage["date_updated"] = data.date_updated;
+		            localStorage['fuac_'+this_category_id] = "";
+		            //get the articles
+		            ctr = 0;
+		            $.each(data.articles, function(i, articles){
+
+		            	if(articles.category_id == this_category_id)
+		            	{
+			                localStorage["fuac_"+articles.category_id] += '<h2 id="article-title">'+articles.title+'</h2>';
+			                localStorage["fuac_"+articles.category_id] += '<div id="article-body">'+articles.body+'</div>';
+		            	}
+		                ctr++;
+		            });
+		        }
+		    });
+	  	  
+	  	  //$('div#is-body').html("");
+	      $('div#is-body').html(localStorage['fuac_'+this_category_id]);
       	}else if(current_page == "tools"){
-          $('div#is-body').html('');
-          $("h2#article-title").html(localStorage['tools_initial_title']);
-		  $("div#article-body").html(localStorage['tools_initial_body']);
+    //       $('div#is-body').html('');
+    //       $("h2#article-title").html(localStorage['tools_initial_title']);
+		  // $("div#article-body").html(localStorage['tools_initial_body']);
+		  $.ajax({
+				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_tools',
+		        dataType: "jsonp",
+		        success: function (data) {
+		            console.log(data);
+		            localStorage["date_updated"] = data.date_updated;
+		            localStorage['toac_'+this_category_id] = "";
+		            //get the articles
+		            ctr = 0;
+		            $.each(data.articles, function(i, articles){
+
+		            	if(articles.category_id == this_category_id)
+		            	{
+			                localStorage["toac_"+articles.category_id] += '<h2 id="article-title">'+articles.title+'</h2>';
+			                localStorage["toac_"+articles.category_id] += '<div id="article-body">'+articles.body+'</div>';
+		            	}
+		                ctr++;
+		            });
+		        }
+		    });
+	  	  
+	  	  //$('div#is-body').html("");
+	      $('div#is-body').html(localStorage['toac_'+this_category_id]);
       	}
 
 		setTimeout(function(){
