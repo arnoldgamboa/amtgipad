@@ -4,7 +4,8 @@ $(document).bind('pageinit', function () {
 	if (typeof localStorage["first_load"] == 'undefined')
     {
     	$.ajax({
-			url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+			//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+			url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_forms',
 	        dataType: "jsonp",
 	        success: function (data) {
 	        	console.log(data);
@@ -51,7 +52,8 @@ $(document).bind('pageinit', function () {
 	    });
 
     	$.ajax({
-			url: 'http://project.teamsparrow.net/amtgipad/app/api/get_morning_view',
+			//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_morning_view',
+			url: 'http://m.bpiassetmanagement.com/app/api/get_morning_view',
 	        dataType: "jsonp",
 	        success: function (data) {
 	            console.log(data);
@@ -94,7 +96,8 @@ $(document).bind('pageinit', function () {
 
 	//set the fund search dropdowns
 	$.ajax({
-		url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+		//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+		url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_forms',
         dataType: "jsonp",
         success: function (data) {
         	//console.log(data);
@@ -198,7 +201,8 @@ $(document).bind('pageinit', function () {
 			localStorage["current_page"] = "morning_view";
 
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_morning_view',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_morning_view',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_morning_view',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -257,7 +261,8 @@ $(document).bind('pageinit', function () {
 
 			//set the fund search dropdowns
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_forms',
 		        dataType: "jsonp",
 		        success: function (data) {
 		        	console.log(data);
@@ -355,7 +360,8 @@ $(document).bind('pageinit', function () {
 			localStorage["current_page"] = "daily_recap";
 
 			 $.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_daily_recap',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_daily_recap',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_daily_recap',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -412,7 +418,8 @@ $(document).bind('pageinit', function () {
 
    			//set the fund search dropdowns
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_forms',
 		        dataType: "jsonp",
 		        success: function (data) {
 		        	//console.log(data);
@@ -520,7 +527,8 @@ $(document).bind('pageinit', function () {
 			localStorage["current_page"] = "research";
 
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_research',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_research',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_research',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -578,7 +586,8 @@ $(document).bind('pageinit', function () {
 
 			//set the fund search dropdowns
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_forms',
 		        dataType: "jsonp",
 		        success: function (data) {
 		        	console.log(data);
@@ -687,7 +696,8 @@ $(document).bind('pageinit', function () {
 		 //    });
 
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_funds',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -745,7 +755,8 @@ $(document).bind('pageinit', function () {
 
 		    //set the fund search dropdowns
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_forms',
 		        dataType: "jsonp",
 		        success: function (data) {
 		        	console.log(data);
@@ -851,7 +862,8 @@ $(document).bind('pageinit', function () {
 		 //    });
 
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_tools',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_tools',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_tools',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -909,7 +921,8 @@ $(document).bind('pageinit', function () {
 
 		    //set the fund search dropdowns
 			$.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_forms',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_forms',
 		        dataType: "jsonp",
 		        success: function (data) {
 		        	console.log(data);
@@ -1111,7 +1124,8 @@ $(document).bind('pageinit', function () {
       	{
 
       	  $.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_morning_view',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_morning_view',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_morning_view',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -1137,7 +1151,8 @@ $(document).bind('pageinit', function () {
       	}else if(current_page == "daily_recap"){
 
       	  $.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_daily_recap',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_daily_recap',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_daily_recap',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -1162,7 +1177,8 @@ $(document).bind('pageinit', function () {
 
       	}else if(current_page == "research"){
           $.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_research',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_research',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_research',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -1189,7 +1205,8 @@ $(document).bind('pageinit', function () {
     //       $("h2#article-title").html(localStorage['funds_initial_title'] == '' ? '' : localStorage['funds_initial_title']);
 		  // $("div#article-body").html(localStorage['funds_initial_body'] == '' ? '' : localStorage['funds_initial_body']);
 		  $.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_funds',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -1216,7 +1233,8 @@ $(document).bind('pageinit', function () {
     //       $("h2#article-title").html(localStorage['tools_initial_title']);
 		  // $("div#article-body").html(localStorage['tools_initial_body']);
 		  $.ajax({
-				url: 'http://project.teamsparrow.net/amtgipad/app/api/get_tools',
+				//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_tools',
+				url: 'http://m.bpiassetmanagement.com/app/api/get_tools',
 		        dataType: "jsonp",
 		        success: function (data) {
 		            console.log(data);
@@ -1261,7 +1279,8 @@ $(document).bind('pageinit', function () {
 		$.mobile.showPageLoadingMsg("a", "Loading...", true);
 
 		$.ajax({
-			url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_result/'+fund_brand+'/'+risk_profile+'/'+fund_type+'/'+currency,
+			//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_result/'+fund_brand+'/'+risk_profile+'/'+fund_type+'/'+currency,
+			url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_result/'+fund_brand+'/'+risk_profile+'/'+fund_type+'/'+currency,
 	        dataType: "jsonp",
 	        // success: function (data) {
 	        //     //console.log(data);
@@ -1389,7 +1408,8 @@ $(document).bind('pageinit', function () {
 
 		//get the result
 		$.ajax({
-			url: 'http://project.teamsparrow.net/amtgipad/app/api/search_article/'+search_keyword,
+			//url: 'http://project.teamsparrow.net/amtgipad/app/api/search_article/'+search_keyword,
+			url: 'http://m.bpiassetmanagement.com/app/api/search_article/'+search_keyword,
 	        dataType: "jsonp",
 	        success: function (data) {
 	            // console.log(data);
@@ -1468,7 +1488,8 @@ $(document).bind('pageinit', function () {
 
 		//get the result
 		$.ajax({
-			url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_result/'+fund_brand+'/'+risk_profile+'/'+fund_type+'/'+currency,
+			//url: 'http://project.teamsparrow.net/amtgipad/app/api/get_funds_search_result/'+fund_brand+'/'+risk_profile+'/'+fund_type+'/'+currency,
+			url: 'http://m.bpiassetmanagement.com/app/api/get_funds_search_result/'+fund_brand+'/'+risk_profile+'/'+fund_type+'/'+currency,
 	        dataType: "jsonp",
 	        success: function (data) {
 	            // console.log(data);
@@ -1576,7 +1597,8 @@ $(document).bind('pageinit', function () {
 		//alert(star_ids);
 		//get the result
 		$.ajax({
-			url: 'http://project.teamsparrow.net/amtgipad/app/api/favorites/?ids='+star_ids,
+			//url: 'http://project.teamsparrow.net/amtgipad/app/api/favorites/?ids='+star_ids,
+			url: 'http://m.bpiassetmanagement.com/app/api/favorites/?ids='+star_ids,
 	        dataType: "jsonp",
 	        success: function (data) {
 	            //console.log(data);
