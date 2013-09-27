@@ -1102,7 +1102,7 @@ $(document).bind('pageinit', function () {
 	        success: function (data) {
 	            //console.log(data);
 	            var table = "";
-	            table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
+	            table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Fund Name</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD</th><th align=\"left\" width=\"10%\">YTD</th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">5YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
 	            
 	            $.each(data, function(i, result){
 	            	
@@ -1297,7 +1297,7 @@ $(document).bind('pageinit', function () {
 	        success: function (data) {
 	            // console.log(data);
 	            var table = "";
-	            table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
+	            table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Fund Name</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD</th><th align=\"left\" width=\"10%\">YTD</th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">5YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
 
 	            $.each(data, function(i, result){
 
@@ -1405,7 +1405,7 @@ $(document).bind('pageinit', function () {
 	        success: function (data) {
 	            //console.log(data);
 	            var fav_table = "";
-	           	fav_table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Bond Funds</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD<small>2</small></th><th align=\"left\" width=\"10%\">YTD<small>3</small></th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
+	           	fav_table += "<table data-role=\"table\" border=\"0\" width=\"100%\" id=\"search-results-table\"  class=\"ui-responsive table-stroke\"><thead><th>&nbsp;</th><th align=\"left\" width=\"40%\">Fund Name</th><th align=\"left\" width=\"10%\">NAVPU</th><th align=\"left\" width=\"10%\">DoD</th><th align=\"left\" width=\"10%\">YTD</th><th align=\"left\" width=\"10%\">1YR</th><th align=\"left\" width=\"10%\">3YRS</th><th align=\"left\" width=\"10%\">5YRS</th></thead><tbody id=\"result_final\" cellspacing=\"2\" cellpadding=\"2\">";
 
 	            $.each(data, function(i, result){
 
