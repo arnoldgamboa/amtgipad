@@ -34,5 +34,6 @@
     <gap:splash src="icon/w2008.jpg" gap:platform="ios" width="2048" height="1496" />
     <gap:splash src="icon/w2008.jpg" gap:platform="ios" width="1536" height="2008" />
 
+    <gap:platform name="ios" />
 
 </widget>
