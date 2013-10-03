@@ -32,7 +32,7 @@
 
     <!-- retina iPad support: PhoneGap 2.5.0+ only -->
     <gap:splash src="icon/w2008.png" gap:platform="ios" width="2048" height="1496" />
-    <gap:splash src="icon/w2008.png" gap:platform="ios" width="1536" height="2008" />
+    <gap:splash src="icon/h2008.png" gap:platform="ios" width="1536" height="2008" />
 
     <gap:platform name="ios" />
 
