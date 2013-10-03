@@ -21,9 +21,9 @@
     <preference name="target-device" value="tablet" />
     <preference name="fullscreen" value="false" />
         
-    <icon src="icon/72x72.jpg" gap:platform="ios" width="72" height="72" />
+    <icon src="icon/72x72.png" gap:platform="ios" width="72" height="72" />
 <!-- retina iPad support: PhoneGap 2.5.0+ only -->
-    <icon src="icon/512x512.jpg" gap:platform="ios" width="144" height="144" />
+    <icon src="icon/512x512.png" gap:platform="ios" width="144" height="144" />
 
     <plugin name="InAppBrowser" value="CDVInAppBrowser" />
     
