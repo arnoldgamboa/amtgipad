@@ -20,10 +20,19 @@
     <preference name="orientation" value="default" />
     <preference name="target-device" value="tablet" />
     <preference name="fullscreen" value="false" />
-    <icon src="icons/amtg-ipad-icon.png" />
+        
+    <icon src="icon/72x72.jpg" gap:platform="ios" width="72" height="72" />
+<!-- retina iPad support: PhoneGap 2.5.0+ only -->
+    <icon src="icon/512x512.jpg" gap:platform="ios" width="144" height="144" />
+
     <plugin name="InAppBrowser" value="CDVInAppBrowser" />
-    <gap:splash src="icons/Default-Portrait~ipad.png" gap:platform="ios" width="320" height="480" />
-    <gap:splash src="icons/Default-Portrait@2x~ipad.png" gap:platform="ios" width="768" height="1004" />
+    
+    <gap:splash src="icon/w1004.jpg" gap:platform="ios" width="1024" height="748" />
+    <gap:splash src="icon/h1004.jpg" gap:platform="ios" width="768" height="1004" />
+
+    <!-- retina iPad support: PhoneGap 2.5.0+ only -->
+    <gap:splash src="icon/w2008.jpg" gap:platform="ios" width="2048" height="1496" />
+    <gap:splash src="icon/w2008.jpg" gap:platform="ios" width="1536" height="2008" />
 
 
 </widget>
