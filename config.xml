@@ -16,7 +16,7 @@
     <author href="https://build.phonegap.com" email="support@phonegap.com">
         Hardeep Shoker 
     </author>
-    <preference name="phonegap-version" value="2.9.0" />
+    <preference name="phonegap-version" value="3.0.0" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="tablet" />
     <preference name="fullscreen" value="false" />
@@ -27,12 +27,12 @@
 
     <plugin name="InAppBrowser" value="CDVInAppBrowser" />
     <!-- <gap:splash src="splash.png" width="1024" height="768"/> -->
-  <gap:splash src="icon/Default-Landscape.png" gap:platform="ios" width="1024" height="748" />
-<gap:splash src="icon/Default-Portrait.png" gap:platform="ios" width="768" height="1004" />
+  <gap:splash src="icon/Default-Landscape~ipad.png" gap:platform="ios" width="1024" height="748" />
+<gap:splash src="icon/Default-Portrait~ipad.png" gap:platform="ios" width="768" height="1004" />
 
 <!-- retina iPad support: PhoneGap 2.5.0+ only -->
-<gap:splash src="icon/Default-Landscape_at_2x.png" gap:platform="ios" width="2048" height="1496" />
-<gap:splash src="icon/Default-Portrait_at_2x.png" gap:platform="ios" width="1536" height="2008" />
+<gap:splash src="icon/Default-Landscape@2x~ipad.png" gap:platform="ios" width="2048" height="1496" />
+<gap:splash src="icon/Default-Portrait@2x~ipad.png" gap:platform="ios" width="1536" height="2008" />
 
     <gap:platform name="ios" />
 
