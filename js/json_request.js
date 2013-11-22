@@ -58,9 +58,16 @@ $(document).bind('pageinit', function () {
 	            localStorage["date_updated"] = data.date_updated;
 
 	            //get the categories
+	            ctr = 0;
 	            var left_menu = "";
 	            $.each(data.categories, function(i, categories){
 	                //alert('Categories ==  '+categories.title);
+	                if(ctr == 0)
+	                {
+	                	localStorage["morning_view_initial_category"] = categories.title;
+	                }
+	                ctr++;
+
 	                left_menu += '<li><a href="javascript:void(0)" rel="morning_view|'+categories.title+'" id="'+categories.id+'">'+categories.title+'</a></li>';
 	            });
 	            localStorage["morning_view_categories"] = left_menu;
@@ -126,6 +133,7 @@ $(document).bind('pageinit', function () {
 	localStorage["current_page"] = "morning_view";
 	
 	//load the content vila localStorage
+	$("h1#article-category").html(localStorage["morning_view_initial_category"]);
 	$("h2#article-title").html(localStorage["morning_view_initial_title"]);
 	$("div#article-body").html(localStorage["morning_view_initial_body"]);
 
@@ -205,9 +213,16 @@ $(document).bind('pageinit', function () {
 		            localStorage["date_updated"] = data.date_updated;
 
 		            //get the categories
+		            ctr = 0;
 		            var left_menu = "";
 		            $.each(data.categories, function(i, categories){
 		                //alert('Categories ==  '+categories.title);
+		                if(ctr == 0)
+		                {
+		                	localStorage["morning_view_initial_category"] = categories.title;
+		                }
+		                ctr++;
+
 		                left_menu += '<li><a href="javascript:void(0)" rel="morning_view|'+categories.title+'" id="'+categories.id+'">'+categories.title+'</a></li>';
 		            });
 		            localStorage["morning_view_categories"] = left_menu;
@@ -292,7 +307,7 @@ $(document).bind('pageinit', function () {
 			$("span#date_updated").html(localStorage["date_updated"]);
 			$("span#page-article-title").html("Morning View");
 
-			$("h1#article-category").html("");
+			$("h1#article-category").html(localStorage["morning_view_initial_category"]);
 			$("h2#article-title").html("");
 			$("div#article-body").html("");
 
@@ -361,9 +376,16 @@ $(document).bind('pageinit', function () {
 		            console.log(data);
 		            localStorage["date_updated"] = data.date_updated;
 
+		            ctr = 0;
 		            var left_menu = "";
 	                $.each(data.categories, function(i, categories){
 	                    //alert('Categories ==  '+categories.title);
+	                    if(ctr == 0)
+		                {
+		                	localStorage["daily_recap_initial_category"] = categories.title;
+		                }
+		                ctr++;
+
 	                    left_menu += '<li><a href="javascript:void(0)" rel="daily_recap|'+categories.title+'" id="'+categories.id+'">'+categories.title+'</a></li>';
 	                });
 	                localStorage["daily_recap_categories"] = left_menu;
@@ -447,7 +469,7 @@ $(document).bind('pageinit', function () {
 			$("span#date_updated").html(localStorage["date_updated"]);
 			$("span#page-article-title").html("Daily Recap");
 
-			$("h1#article-category").html("");
+			$("h1#article-category").html(localStorage["daily_recap_initial_category"]);
 			$("h2#article-title").html("");
 			$("div#article-body").html("");
 
@@ -526,9 +548,16 @@ $(document).bind('pageinit', function () {
 		            console.log(data);
 		            localStorage["date_updated"] = data.date_updated;
 
+		            ctr = 0;
 		            var left_menu = "";
 	                $.each(data.categories, function(i, categories){
 	                    //alert('Categories ==  '+categories.title);
+	                    if(ctr == 0)
+		                {
+		                	localStorage["research_initial_category"] = categories.title;
+		                }
+
+		                ctr++;
 	                    left_menu += '<li><a href="javascript:void(0)" rel="research|'+categories.title+'" id="'+categories.id+'">'+categories.title+'</a></li>';
 	                });
 	                localStorage["research_categories"] = left_menu;
@@ -613,7 +642,7 @@ $(document).bind('pageinit', function () {
 			$("span#date_updated").html(localStorage["date_updated"]);
 			$("span#page-article-title").html("Research");
 
-			$("h1#article-category").html("");
+			$("h1#article-category").html(localStorage["research_initial_category"]);
 			$("h2#article-title").html("");
 			$("div#article-body").html("");
 
@@ -693,9 +722,16 @@ $(document).bind('pageinit', function () {
 		            console.log(data);
 		            localStorage["date_updated"] = data.date_updated;
 
+		            ctr = 0;
 		            var left_menu = "";
 	                $.each(data.categories, function(i, categories){
 	                    //alert('Categories ==  '+categories.title);
+	                    if(ctr == 0)
+		                {
+		                	localStorage["funds_initial_category"] = categories.title;
+		                }
+		                ctr++;
+
 	                    left_menu += '<li><a href="javascript:void(0)" rel="funds|'+categories.title+'" id="'+categories.id+'">'+categories.title+'</a></li>';
 	                });
 	                localStorage["funds_categories"] = left_menu;
@@ -780,7 +816,7 @@ $(document).bind('pageinit', function () {
 			$("span#date_updated").html(localStorage["date_updated"]);
 			$("span#page-article-title").html("Funds");
 
-			$("h1#article-category").html("");
+			$("h1#article-category").html(localStorage["funds_initial_category"]);
 			$("h2#article-title").html("");
 			$("div#article-body").html("");
 
@@ -857,9 +893,16 @@ $(document).bind('pageinit', function () {
 		            console.log(data);
 		            localStorage["date_updated"] = data.date_updated;
 
+		            ctr = 0;
 		            var left_menu = "";
 	                $.each(data.categories, function(i, categories){
 	                    //alert('Categories ==  '+categories.title);
+	                    if(ctr == 0)
+		                {
+		                	localStorage["tools_initial_category"] = categories.title;
+		                }
+		                ctr++;
+
 	                    left_menu += '<li><a href="javascript:void(0)" rel="tools|'+categories.title+'" id="'+categories.id+'">'+categories.title+'</a></li>';
 	                });
 	                localStorage["tools_categories"] = left_menu;
@@ -944,7 +987,7 @@ $(document).bind('pageinit', function () {
 			$("span#date_updated").html(localStorage["date_updated"]);
 			$("span#page-article-title").html("Tools");
 
-			$("h1#article-category").html("");
+			$("h1#article-category").html(localStorage["tools_initial_category"]);
 			$("h2#article-title").html("");
 			$("div#article-body").html("");
 
@@ -1307,7 +1350,7 @@ $(document).bind('pageinit', function () {
 				    }
 
                     //table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href='javascript:void()'>"+result.fund_name+"</a></td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
-                	table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href=\"#funddesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.fund_name+"</a><div data-role=\"popup\" id=\"funddesc"+result.id+"\"><p>"+result.description+"</p></div></td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
+                	table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href=\"#funddesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.fund_name+"</a><div data-role=\"popup\" id=\"funddesc"+result.id+"\"><p>"+result.description+"</p></div></td><td>"+result.navpu+"</td><td>"+result.dod2+"%</td><td>"+result.ytd3+"%</td><td>"+result.year1+"%</td><td>"+result.year2+"%</td><td>"+result.year3+"%</td></tr>";
                 	table += "<script>$(\"#funddesc"+result.id+"\").popup();</script>";
                 });
                 //table += "<script>$('.star').raty({numberMax: 1,starOff : 'images/star-off-big.png',starOn : 'images/star-on-big.png'});</script>";
@@ -1503,7 +1546,7 @@ $(document).bind('pageinit', function () {
 				    }
 
                     //table += "<tr><td><div class='star' id="+result.id+"></div></td><td>"+result.fund_name+"</td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
-                    table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href=\"#funddesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.fund_name+"</a><div data-role=\"popup\" id=\"funddesc"+result.id+"\"><p>"+result.description+"</p></div></td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
+                    table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href=\"#funddesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.fund_name+"</a><div data-role=\"popup\" id=\"funddesc"+result.id+"\"><p>"+result.description+"</p></div></td><td>"+result.navpu+"</td><td>"+result.dod2+"%</td><td>"+result.ytd3+"%</td><td>"+result.year1+"%</td><td>"+result.year2+"%</td><td>"+result.year3+"%</td></tr>";
                 	table += "<script>$(\"#funddesc"+result.id+"\").popup();</script>";
                 });
                 //table += "<script>$('.star').raty({numberMax: 1,starOff : 'images/star-off-big.png',starOn : 'images/star-on-big.png'});</script>";
@@ -1615,7 +1658,7 @@ $(document).bind('pageinit', function () {
 				    star_src = 'images/star-on-big.png';
 
                     //table += "<tr><td><span><img class='star star_on' id="+result.id+" src="+star_src+" /></span></td><td><a  href='#fund_1' data-transition='pop' data-inline='true' data-rel='popup'>"+result.fund_name+"</a></td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
-                	fav_table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href=\"#funddesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.fund_name+"</a><div data-role=\"popup\" id=\"funddesc"+result.id+"\"><p>"+result.description+"</p></div></td><td>"+result.navpu+"</td><td>"+result.dod2+"</td><td>"+result.ytd3+"</td><td>"+result.year1+"</td><td>"+result.year2+"</td><td>"+result.year3+"</td></tr>";
+                	fav_table += "<tr><td><span><img class='star "+star_class+"' id="+result.id+" src="+star_src+" /></span></td><td><a href=\"#funddesc"+result.id+"\" data-rel=\"popup\" data-inline=\"true\" data-transition=\"pop\">"+result.fund_name+"</a><div data-role=\"popup\" id=\"funddesc"+result.id+"\"><p>"+result.description+"</p></div></td><td>"+result.navpu+"</td><td>"+result.dod2+"%</td><td>"+result.ytd3+"%</td><td>"+result.year1+"%</td><td>"+result.year2+"%</td><td>"+result.year3+"%</td></tr>";
                 	fav_table += "<script>$(\"#funddesc"+result.id+"\").popup();</script>";
                 });
                 //table += "<script>$('.star').raty({numberMax: 1,starOff : 'images/star-off-big.png',starOn : 'images/star-on-big.png'});</script>";
